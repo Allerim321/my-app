@@ -1,25 +1,85 @@
 import { StatusBar } from "expo-status-bar"
-import { View, Text, Button, StyleSheet } from "react-native"
+import { AntDesign } from '@expo/vector-icons';
+import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity, Alert } from "react-native"
 
 function App(){
   return(
-    <View style={styles.container}>
-    <StatusBar style="light" />
-    <Text>Oi</Text>
-    <Text>Oi</Text>
-    <Button title="Clique aqui" />
+    <View>
+    <StatusBar/>
+    <View style={styles.header}>
+    <Image source={require('./assets/senai.png')}
+    style={styles.logo}/>
+    <Text style={styles.bemvindo}>Bem Vindo(a)</Text>
+    </View>
+    <View>
+    <Text style={styles.container}>Email:</Text>
+    <TextInput style={styles.input} placeholder="Digite seu email:"/>
+    <Text style={styles.container}>Senha:</Text>
+    <TextInput style={styles.input} placeholder="Digite sua senha:"/>
+    <TouchableOpacity style={styles.button}><Text style={styles.textobotao}>Acessar</Text></TouchableOpacity>
+    <Text style={styles.link} onPress={link}>
+          Não possui conta? Cadastre-se
+        </Text>
+    <AntDesign name="google" size={24} color="black" />
+    <AntDesign name="facebook-square" size={24} color="black" />
+    </View>
     </View>
   )
 }
 
+
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "black",
-    justifyContent: "center",
+
+  header: {
     alignItems: "center",
-    margin: 40,
+    backgroundColor: "red",
+    padding: 50,
+    paddingBottom: 30,
+    marginBottom: 20,
     color: "white"
+  },
+  logo: {
+    width: 200,
+    height: 52,
+    marginBottom: 10
+  },
+  bemvindo: {
+    fontSize: 20,
+    color: "white"
+  },
+  container:{
+    margin: 20,
+    marginBottom: 0,
+    fontSize: 16
+  },
+  input: {
+    margin: 20,
+    width: 320,
+    borderBottomColor: '#CDCDCD',
+    borderBottomWidth: 1,
+    paddingBottom: 10
+  },
+  button: {
+    backgroundColor: 'black',
+    padding: 10,
+    borderRadius: 5,
+    marginTop: 10,
+    marginLeft: 20,
+    width: 320
+  },
+  textobotao: {
+    color: 'white',
+    textAlign: 'center',
+  },
+  link: {
+    color: '#4305C7',
+    margin: 20,
+    marginTop: 10
   }
 })
+
+const link = () => {
+  Alert.alert('Clicou o link');
+};
 
 export default App
