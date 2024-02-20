@@ -1,12 +1,14 @@
-import { StatusBar } from "expo-status-bar"
+import { StatusBar } from "react-native"
 import { AntDesign } from '@expo/vector-icons';
 import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity, Alert } from "react-native"
 
 function App(){
   return(
     <View>
-    <StatusBar/>
     <View style={styles.header}>
+    <StatusBar 
+          barStyle="light-content"
+          backgroundColor="black"/>
     <Image source={require('./assets/senai.png')}
     style={styles.logo}/>
     <Text style={styles.bemvindo}>Bem Vindo(a)</Text>
@@ -20,8 +22,9 @@ function App(){
     <Text style={styles.link} onPress={link}>
           Não possui conta? Cadastre-se
         </Text>
+    <View style={styles.icons}>
     <AntDesign name="google" size={24} color="black" />
-    <AntDesign name="facebook-square" size={24} color="black" />
+    <AntDesign name="facebook-square" size={24} color="black" /></View>
     </View>
     </View>
   )
@@ -75,6 +78,12 @@ const styles = StyleSheet.create({
     color: '#4305C7',
     margin: 20,
     marginTop: 10
+  },
+  icons: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    gap: 6
   }
 })
 
