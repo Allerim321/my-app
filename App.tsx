@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
 })
 
 const link = () => {
-  Alert.alert('Clicou o link');
+  Alert.alert('Página em desenvolvimento');
 };
 
 export default App
