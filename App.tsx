@@ -17,7 +17,7 @@ function App(){
     <Text style={styles.container}>Email:</Text>
     <TextInput style={styles.input} placeholder="Digite seu email:"/>
     <Text style={styles.container}>Senha:</Text>
-    <TextInput style={styles.input} placeholder="Digite sua senha:"/>
+    <TextInput style={styles.input} placeholder="Digite sua senha:" secureTextEntry/>
     <TouchableOpacity style={styles.button}><Text style={styles.textobotao}>Acessar</Text></TouchableOpacity>
     <Text style={styles.link} onPress={link}>
           Não possui conta? Cadastre-se
